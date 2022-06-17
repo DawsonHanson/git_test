@@ -1,3 +1,3 @@
 # git_test
-First entry 
 Hello Odin!
+This repository will feature projects as I make my way through "The Odin Project".
