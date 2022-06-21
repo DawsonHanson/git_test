@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- Needed in order to use external css method -->
+		<style>
+			p {
+				background-color: green;
+				color: white;
+				font-size: 18px;
+			}
+		</style>
+		<!-- By writing between <style> tags one can and css styles directly in an html file -->
 		<link rel="stylesheet" href="styles.css">
+		<!-- Needed in order to use external css method -->
 		<meta charset="utf-8">
 		<title>My first Website</title>
 	</head>
 		<body>
 			<!-- This is a comment text, they will not be visible on the webpage -->
 			<h1>Look! Text is on the page!</h1>
-			<h1>Big Brain, Much Wow!!</h1>
+			<div>Style me via the external method</div>
+			<h1>Big Brain, Much Wow!!</h1>			
 				<p><strong>Lipsum dolor sit amet</strong>,<em>consectetur adipiscing elit</em>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 					Accumsan lacus vel facilisis volutpat est. <strong>Diam volutpat</strong> commodo sed egestas egestas fringilla. Turpis egestas integer eget 
 					aliquet nibh <em>praesent tristique</em>. Habitant morbi tristique senectus et netus et malesuada fames. Congue eu consequat ac felis donec et. 
@@ -61,6 +70,9 @@
 				<li>Ostankino Tower, 540.1m (1,772ft), Russa, Moscow</li>
 				<li>Oriental Pearl Tower, 468m (1,535ft), China, Shanghai</li>
 				<li>Milad Tower, 435m (1,427ft), Iran, Tehran</li>
-			</ol>
+			</ol>	
+			<button style="background-color: orange; color: black; font-size: 18px;">
+			Inline Method
+			</button> 	
 		</body>
 </html>
