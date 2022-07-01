@@ -4,3 +4,5 @@ admin = name;
 
 alert(name)
 alert(admin)
+
+console.log("hello world")
