@@ -1,28 +1,40 @@
 let name = prompt ('What is your name?');
 
 alert(`Hello ${name}, nice to meet you!`)
-alert(`${name}, I think thats an awesome name`)
 
 console.log("hello world")
 
-const age = prompt ('How old are you?');
+let age = prompt ('Please state your age');
 let myNum = Number(age)
 if (myNum >= 14 && myNum <= 90) {
-  alert ('Enjoy your stay!')
+  alert ('Access Granted')
 } else  {
-  alert ('Sorry! You\'re either to young or to old to be here!.')
+  alert ('Sorry! Your age does not fit the parameters')
 }
 
 console.log (typeof myNum)
 console.log (typeof age)
 
-let user = prompt ('Who are you?');
-let admin = 'Admin'
-if (user = admin) {
-  prompt ('Password?')
-} else {
-  alert ('Sorry! I don\'t know you.')
-}
+let user = prompt ('Account Name');
+const userAdmin = 'Admin'
+const passWord = 'TheMaster'
+let pwd = ''
+  if (user == userAdmin) 
 
-console.log (typeof admin)
+    {let pwd = prompt ('Password')
+    if (pwd == passWord) 
+    {alert ('Welcome!') } 
+    else if (pwd == '' || pwd == null) 
+    {alert ('Canceled')}
+    else 
+    {alert ('Wrong Password')}}
+    
+  else if (user == '' || user == null) 
+  {alert ('Canceled')}
+  else 
+  {alert ('Access Denied')}
+
+
+
+console.log (typeof userAdmin)
 console.log (typeof user)
