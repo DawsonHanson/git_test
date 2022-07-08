@@ -34,7 +34,38 @@ let pwd = ''
   else 
   {alert ('Access Denied')}
 
-
-
 console.log (typeof userAdmin)
 console.log (typeof user)
+
+// function practice//
+
+let x = prompt ('+7 to the inserted number')
+let add7 = function () {
+  let y = (+x + 7);
+  return y;
+}
+alert (add7 ())
+
+function multiply () {
+  let y = prompt ('multiple y*z, value for y?')
+  let z = prompt ('value for z?')
+  let c = (+y * +z)
+  return c;
+}
+alert (multiply ())
+
+function capitalize () {
+  let string = prompt ('insert text, will capitalize the first letter only')
+  let firstLetter = string.substring(0, 1).toUpperCase ()
+  let stringBody = string.substring(1).toLowerCase () 
+  let newString = firstLetter + stringBody;
+  return newString;
+}
+alert (capitalize ())
+
+function lastLetter () {
+  let string = prompt ('insert text, will grab the last letter')
+  let newString = string.slice(-1)
+  return newString;
+}
+alert (lastLetter ())
