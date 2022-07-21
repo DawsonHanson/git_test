@@ -11,3 +11,13 @@ const repeatString = function(string, num) {
 
 // Do not edit below this line
 module.exports = repeatString;
+
+const reverseString = function(string) {
+  let arrayString = string.split('')
+  let revString = arrayString.reverse()
+  let newString = revString.join('')
+  return newString;
+};
+
+// Do not edit below this line
+module.exports = reverseString;
