@@ -37,3 +37,26 @@ const removeFromArray = function(array, ...arg) {
 
 // Do not edit below this line
 module.exports = removeFromArray;
+
+const sumAll = function(num1, num2) {
+  let message = 'ERROR'
+  if (num1 !== Number(num1) || num2 !== Number(num2)) {
+    return message;
+  }
+
+  if (num1 < 0 || num2 < 0) {
+    return message;
+  }
+  
+  // finds biggest number 
+ let end = Math.max(num1, num2)
+ // finds smallest number 
+ let start = Math.min(num1, num2)
+  // The sum of a series is equal to the (end + start)(num elements)/2.
+ let answer = ((end + start)*(end))/2;
+ 
+  return answer;
+};
+
+// Do not edit below this line
+module.exports = sumAll;
