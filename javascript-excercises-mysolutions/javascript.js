@@ -79,3 +79,21 @@ const leapYears = function(year) {
 
 // Do not edit below this line
 module.exports = leapYears;
+
+const ftoc = function(temp) {
+  let answer = (temp - 32)* (5/9);
+  let roundedAnswer = Math.round(answer * 10) /10;
+  return roundedAnswer;
+};
+
+const ctof = function(temp) {
+  let answer = (temp * (9/5)) + 32;
+  let roundedAnswer = Math.round(answer * 10) /10
+  return roundedAnswer;
+};
+
+// Do not edit below this line
+module.exports = {
+  ftoc,
+  ctof
+};
