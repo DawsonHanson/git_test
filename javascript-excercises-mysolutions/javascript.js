@@ -21,3 +21,19 @@ const reverseString = function(string) {
 
 // Do not edit below this line
 module.exports = reverseString;
+
+const removeFromArray = function(array, ...arg) {
+  // array.forEach(function(currentValue, index, arr), thisValue)
+  arg.forEach(function (x) { 
+    // indexOf(searchElement, fromIndex)
+    let index = array.indexOf(x);
+    // The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+    if (index > -1)
+      array.splice(index, 1)
+  })
+  return array;
+
+};
+
+// Do not edit below this line
+module.exports = removeFromArray;
