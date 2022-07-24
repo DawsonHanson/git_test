@@ -107,3 +107,34 @@ function launch () {
   }
 }
 console.log (launch())
+
+// DOM practice
+
+const container = document.querySelector('#container');
+
+const redPara = document.createElement('p');
+redPara.classList.add('redPara');
+redPara.textContent = 'Hey I\'m red!';
+redPara.setAttribute('style', 'color: red;');
+container.appendChild(redPara);
+
+const blueHeader = document.createElement('h3');
+blueHeader.classList.add('blueHeader');
+blueHeader.textContent = 'I\'m a blue h3!';
+blueHeader.setAttribute('style', 'color: blue');
+container.appendChild(blueHeader);
+
+const containerPink = document.createElement('div');
+containerPink.classList.add('containerPink');
+containerPink.setAttribute('style', 'border-color: black; border-size: 2px; background-color: pink;');
+container.appendChild(containerPink);
+
+const containerPinkHeader = document.createElement('h1');
+containerPinkHeader.classList.add('containerPinkHeader');
+containerPinkHeader.textContent = 'I\'m in a div!';
+containerPink.appendChild(containerPinkHeader);
+
+const containerPinkPara = document.createElement('p');
+containerPinkPara.classList.add('containerPinkPara');
+containerPinkPara.textContent = 'ME TOO!';
+containerPink.appendChild(containerPinkPara);
