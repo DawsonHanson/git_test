@@ -1,0 +1,99 @@
+<!-- Code from JavaScript30 (Event Capture, Propagation and Bubbling), using as reference/ Notes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
+
+<button></button>
+
+<script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button')
+
+  function logText(x) {
+    console.log(this.classList.value);
+    // (this) if in a normal function will reference
+    // the global object ('window' if in a browser).
+    // if called in a function thats part of an object (aka method)
+    // then it will reference the object itself. 
+  
+    x.stopPropagation();
+    // stopPropagation() will prevent the event from bubbling up,
+    // however capture === false as since capturing is from top
+    // to bottom. Will capture (div .one) fire event which in turn
+    // will stop all other 'click' events due to stopPropagation().
+  }
+
+  // divs.forEach(div => div.addEventListener('click', logText))
+  // this function will (if clicking the coral square) cause
+  // a 'click' event on all squares, as they are nested within 
+  // each other. This concept is the basics of Bubbling, like 
+  // a rippling effect on water.  
+
+  divs.forEach(function (div) {
+    div.addEventListener('click', logText, {
+      capture: true, 
+      // if capture: true, the browser will log, aka (capture) where you clicked,
+      // fire that element, then move on to the next capture, fire
+      // that element ->  
+    })
+  });
+  // when a 'click' event occurs the browser will create a 
+  // capture, which will log where you clicked. This log will
+  // be from the top down (div .one, div .two, div .three). 
+  // then (if capture is set to false) will fire the elements
+  // from bottom up, (where the capture ended (div .there, div .two, div .one))
+
+  // divs.forEach(div => 
+   // div.addEventListener('click', logText, {
+     // capture: false   
+  // }));
+
+button.addEventListener('click', function () {
+  console.log('click!!!');
+}, {
+  once: true,
+  // (once) set to true will allow the function to fire once, then unbind itself.
+  // same thing as div.removeEventListener('click', logText)
+})
+</script>
+
+</body>
+</html>
