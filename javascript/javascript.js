@@ -138,3 +138,69 @@ const containerPinkPara = document.createElement('p');
 containerPinkPara.classList.add('containerPinkPara');
 containerPinkPara.textContent = 'ME TOO!';
 containerPink.appendChild(containerPinkPara);
+
+// creating/ deleting/ returning object properties
+let user = {}
+
+user.name = 'John'
+user.surname = 'Smith'
+console.log(user.name)
+user.name = 'Pete'
+console.log(user.name)
+console.log('name' in user)
+delete user.name 
+console.log('name' in user)
+
+// for ...in loop, similar to forEach
+let schedule = {}
+
+console.log(isEmpty(schedule))
+
+function isEmpty(x) {
+  for (let obj in x) {
+    return false;
+  } 
+    return true;
+}
+schedule['8:30'] = 'get up'
+
+console.log(isEmpty(schedule))
+
+// for ...in loop to sum all values
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+}
+
+function sumAll (x) {
+  let sum = Number();
+  for(let value in x) {
+    sum += x[value]
+  }
+  return sum;
+}
+
+console.log(sumAll(salaries))
+
+// for ...in loop to multiply value, or return value in NaN
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: 'My menu'
+}
+
+function multiplyNumber(x) {
+  for (let value in x) {
+    let sum = x[value] * 2
+    if (typeof x[value] == 'number') {
+      console.log(sum)
+    } else {
+    console.log(x[value])
+    }
+  }
+}
+
+multiplyNumber(menu)
