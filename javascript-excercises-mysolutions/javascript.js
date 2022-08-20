@@ -97,3 +97,51 @@ module.exports = {
   ftoc,
   ctof
 };
+
+// calculator 
+const add = function(x,y) {
+  return x + y
+};
+
+const subtract = function(x,y) {
+	return x - y
+};
+
+const sum = function(array) {
+	const total = array.reduce((x, item) => {
+    return x + item
+  }, 0);
+  return total;
+};
+
+const multiply = function(array) {
+  const total = array.reduce((x, item) => {
+    return x * item
+  }, 1);
+  return total;
+};
+
+const power = function(x,y) {
+  return x ** y
+};
+
+const factorial = function(y) {
+  if (y === 0) {
+    return 1;
+  } else { 
+    for (let x = y - 1; x >= 1; x--) {
+    y *= x
+  }
+}
+  return y;
+};
+
+// Do not edit below this line
+module.exports = {
+  add,
+  subtract,
+  sum,
+  multiply,
+  power,
+  factorial
+};
