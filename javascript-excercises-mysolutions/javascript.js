@@ -145,3 +145,19 @@ module.exports = {
   power,
   factorial
 };
+
+const palindromes = function (string) {
+  let newString = string.replace(/[^\w]/g,'')
+  let string1 = newString.toLowerCase()
+  let splitString = string1.split('')
+  let revString = splitString.reverse()
+  let string2 = revString.join('')
+  if (string1 === string2) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// Do not edit below this line
+module.exports = palindromes;
