@@ -185,3 +185,19 @@ const getTheTitles = function(array) {
 
 // Do not edit below this line
 module.exports = getTheTitles;
+
+const findTheOldest = function(array) {
+  let persons = array.sort((person1, person2) => {
+    if ((person1.yearOfDeath - person1.yearOfBirth) > (person2.yearOfDeath - person2.yearOfBirth)) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+  console.table(persons)
+  let oldestPerson = persons.splice(0,1)
+  console.log (oldestPerson)
+};
+
+// Do not edit below this line
+module.exports = findTheOldest;
