@@ -188,16 +188,25 @@ module.exports = getTheTitles;
 
 const findTheOldest = function(array) {
   let persons = array.sort((person1, person2) => {
-    if ((person1.yearOfDeath - person1.yearOfBirth) > (person2.yearOfDeath - person2.yearOfBirth)) {
-      return -1;
-    } else {
-      return 1;
+    let person1Age = age(person1.yearOfDeath, person1.yearOfBirth)
+    let person2Age = age(person2.yearOfDeath, person2.yearOfBirth)
+    if (person1Age > person2Age) {
+      return -1 
+    }  else {
+      return 1
     }
-  })
-  console.table(persons)
-  let oldestPerson = persons.splice(0,1)
-  console.log (oldestPerson)
+  });
+  let oldest = persons.splice(0,1)
+  let answer = oldest.at(0)
+  return answer;
 };
+
+let age = function(death, birth) {
+  if (!death) {
+    death = new Date().getFullYear()
+  } 
+  return death - birth
+}
 
 // Do not edit below this line
 module.exports = findTheOldest;
