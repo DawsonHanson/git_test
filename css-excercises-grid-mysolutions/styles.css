@@ -4,10 +4,12 @@ body, html {
 }
 
 .container {
+  resize: both;
+  overflow: auto;
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
   text-align: center;
   height: 100%;
   padding: 16px;
