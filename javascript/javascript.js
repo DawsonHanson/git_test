@@ -204,3 +204,47 @@ function multiplyNumber(x) {
 }
 
 multiplyNumber(menu)
+
+// Object practice 
+
+console.log ('test')
+
+function Book(title, author, pages, read) {
+  this.title = title
+  this.author = author
+  this.pages = pages
+  this.read = read
+  this.info = function() {
+    return (this.title + ' by ' + this.author +', ' + this.pages + ', ' + this.read);
+  }
+}
+
+let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', 'not read yet')
+
+console.log(theHobbit.info())
+
+let hamster = {
+  stomach: '',
+  // was stomach: [],
+
+  eat(food) {
+    this.stomach = food;
+    // was this.stomach.push(food)
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+  // or can give each object is own stomach: []
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+
+speedy.eat("apple");
+console.log( speedy.stomach ); // apple
+
+lazy.eat('banana')
+console.log( lazy.stomach ); // was apple
